@@ -10,16 +10,18 @@
 <body>
     <h1>Add a Todo Item:</h1>
     <form method="POST" action="add">
+        <!-- this is a token django produces to ensure the POST request is coming from this site -->
+        {% csrf_token %}
         <div>
             <p>
                 <label for="id_name">Name: </label>
-                <input type="text" id="id_name" name="item_name">
+                <input type="text" id="id_name" name="item_name" />
             </p>
         </div>
         <div>
             <p>
                 <label for="id_done">Done: </label>
-                <input type="checkbox" id="id_done" name="done">
+                <input type="checkbox" id="id_done" name="done" />
             </p>
         </div>
         <div>
